@@ -50,11 +50,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/ar_app_1.03.loader.js";
+      var loaderUrl = buildUrl + "/ar_app_1.04.loader.js";
       var config = {
-        dataUrl: buildUrl + "/ar_app_1.03.data",
-        frameworkUrl: buildUrl + "/ar_app_1.03.framework.js",
-        codeUrl: buildUrl + "/ar_app_1.03.wasm",
+        dataUrl: buildUrl + "/ar_app_1.04.data",
+        frameworkUrl: buildUrl + "/ar_app_1.04.framework.js",
+        codeUrl: buildUrl + "/ar_app_1.04.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "ARSamaraSpace",
@@ -100,9 +100,6 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          //fullscreenButton.onclick = () => {
-            //unityInstance.SetFullscreen(1);
-          //};
         }).catch((message) => {
           alert(message);
         });
