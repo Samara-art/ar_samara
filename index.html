@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | ARSamaraSpace</title>
+    <title>Unity WebGL Player | AR_samara_webgl</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -23,6 +23,7 @@
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
@@ -50,14 +51,14 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/ar_app_1.04.loader.js";
+      var loaderUrl = buildUrl + "/ar_webgl_1.01.loader.js";
       var config = {
-        dataUrl: buildUrl + "/ar_app_1.04.data",
-        frameworkUrl: buildUrl + "/ar_app_1.04.framework.js",
-        codeUrl: buildUrl + "/ar_app_1.04.wasm",
+        dataUrl: buildUrl + "/ar_webgl_1.01.data",
+        frameworkUrl: buildUrl + "/ar_webgl_1.01.framework.js",
+        codeUrl: buildUrl + "/ar_webgl_1.01.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "ARSamaraSpace",
+        productName: "AR_samara_webgl",
         productVersion: "0.1",
         showBanner: unityShowBanner,
       };
@@ -88,7 +89,7 @@
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
         canvas.style.width = "100%";
-        canvas.style.height = "100%";
+        canvas.style.height = "100$";
       }
 
       loadingBar.style.display = "block";
