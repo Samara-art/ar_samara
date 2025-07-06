@@ -106,6 +106,29 @@
         });
       };
       document.body.appendChild(script);
+      
+      ZAPPAR_PERMISSIONS_IMPLEMENTATION
+
+      function WaitForZCVLoad() {
+          if (zappar.loaded()) {
+              CreateUnityLoader();
+              return;
+          }
+          setTimeout(WaitForZCVLoad, 500);
+      }
+
+      function CreateUnityLoader() {
+          createUnityInstance(canvas, config, (progress) => {
+              spinner.style.display = "none";
+              progressBarEmpty.style.display = "";
+              progressBarFull.style.width = `${100 * progress}%`;
+          }).then((unityInstance) => {
+              loadingCover.style.display = "none";
+              window.uarGameInstance = unityInstance;
+          }).catch((message) => {
+              alert(message);
+          });
+      }
     </script>
   </body>
 </html>
