@@ -137,11 +137,11 @@
         var db = indexedDB.open("dummy_indexdb", 1); // iOS 14.6 fix; the call to open indexdb hangs forever otherwise
 
         const buildUrl = "Build";
-        const loaderUrl = buildUrl + "/ar_webgl_1.26.loader.js";
+        const loaderUrl = buildUrl + "/ar_webgk_1.27.loader.js";
         const config = {
-            dataUrl: buildUrl + "/90e29216c2d6b37e4a346b098c6c067f.data.unityweb",
-            frameworkUrl: buildUrl + "/c42d84b4e98373b6e73d591bdbffacbb.js.unityweb",
-            codeUrl: buildUrl + "/3d32d235b09116210f4d227243806722.wasm.unityweb",
+            dataUrl: buildUrl + "/a32ca6c45c9afd62252dc24c0c0de748.data.unityweb",
+            frameworkUrl: buildUrl + "/6813d740939ad3981dfa0556e7b79c6c.js.unityweb",
+            codeUrl: buildUrl + "/4985ab5243262fd2322ac85d3ad613da.wasm.unityweb",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "DefaultCompany",
             productName: "AR_samara_webgl",
@@ -184,7 +184,7 @@
         //script.onload = () => { CreateUnityLoader();   };
         document.body.appendChild(script);
 
-        window.zappar.permission_request_ui_promise().then(WaitForZCVLoad);
+        WaitForZCVLoad();
 
         function WaitForZCVLoad() {
             if (zappar.loaded()) {
